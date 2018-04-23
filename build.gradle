@@ -1,0 +1,24 @@
+group 'groovyJCSP'
+version '2.4.12-1.0.2'
+
+apply plugin: 'groovy'
+apply plugin: 'java'
+
+sourceCompatibility = 1.8
+def rootDir = "D:\\IntelliJProjects"
+
+File jcspJarDir = file("${rootDir}/jcsp-alpha/build/libs")
+
+println "jcsp jar file is in LOCAL FILE STORE at : $jcspJarDir"
+// will be replaced by link to jar file in jcenter
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+  compile 'org.codehaus.groovy:groovy-all:2.4.12'
+  compile fileTree(dir: "$jcspJarDir", include:['jcsp-alpha-1.1.jar'])
+  testCompile group: 'junit', name: 'junit', version: '4.12'
+  testCompile fileTree(dir: "$jcspJarDir", include:['jcsp-alpha-1.1.jar'])
+}
