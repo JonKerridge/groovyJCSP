@@ -12,9 +12,10 @@ by Jon Kerridge published by Bookboon, free of charge.<p>
 http://bookboon.com/en/using-concurrency-and-parallelism-effectively-i-ebook<p>
 http://bookboon.com/en/using-concurrency-and-parallelism-effectively-ii-ebook<p>
 
-
-
 It is published using the Apache 2.0 Licence.
+
+The name of the branch indicates the Groovy version followed
+by the version of the groovyJCSP library
 
 
 Contact J.Kerridge@napier.ac.uk
