@@ -10,12 +10,12 @@ plugins {
 }
 
 group 'groovyJCSP'
-version '1.1.0'
+version '1.1.2'       // 1.1.2 = compiled with groovy 2.5; 1.1.3 = compiled with groovy 3
 
 apply plugin: 'java'
 apply plugin: 'maven'
 
-sourceCompatibility = 1.8
+//sourceCompatibility = 1.8
 
 Properties properties = new Properties()
 try {
@@ -28,6 +28,11 @@ try {
 allprojects {
   repositories {
     jcenter()
+    mavenCentral()
+    // following required for groovy-all:3.0.0
+    maven {
+      url "https://mvnrepository.com/artifact/org.codehaus.groovy/groovy-all"
+    }
   }
   apply plugin: 'maven'
   apply plugin: 'maven-publish'
@@ -90,15 +95,17 @@ bintray {
     publicDownloadNumbers = true
     version {
       name = project.property('version')
-      desc = 'groovyJCSP'
+      desc = 'groovyJCSP compiled using groovy-all-2.5.2'
     }
   }
 }
 
 dependencies {
-  compile 'org.codehaus.groovy:groovy-all:2.4.12'
+  compile 'org.codehaus.groovy:groovy-all:2.5.2'
+//  compile group: 'org.codehaus.groovy', name: 'groovy-all', version: '3.0.0-alpha-3'
   compile 'cspforjava:jcsp:1.1.0'
-  testCompile 'org.codehaus.groovy:groovy-all:2.4.12'
+  testCompile 'org.codehaus.groovy:groovy-all:2.5.2'
+//  testCompile group: 'org.codehaus.groovy', name: 'groovy-all', version: '3.0.0-alpha-3'
   testCompile 'cspforjava:jcsp:1.1.0'
   testCompile group: 'junit', name: 'junit', version: '4.12'
 }
@@ -107,24 +114,29 @@ task wrapper(type: Wrapper) {
   gradleVersion = '2.4'
 }
 
-
-
-task writeNewPom << {
-  pom {
-    project {
-      licenses {
-        license {
-          name 'The Apache Software License, Version 2.0'
-          url 'http://www.apache.org/licenses/LICENSE-2.0.txt'
-          distribution 'repo'
-        }
-        license {
-          name 'GNU LGPL Version 2.1 or greater'
-          url 'https://www.gnu.org/licenses/old-licenses/lgpl-2.1.en.html'
-          distribution 'repo'
-        }
-      }
-    }
-  }.writeTo("groovyJCSP-1.1.0.pom")
+task copyLib ( type: Copy){
+  def libName = "${rootProject.name}-${version}.jar"
+  from "${buildDir}/libs/${libName}"
+  into "C:/jcspLib"
 }
+
+
+//task writeNewPom << {
+//  pom {
+//    project {
+//      licenses {
+//        license {
+//          name 'The Apache Software License, Version 2.0'
+//          url 'http://www.apache.org/licenses/LICENSE-2.0.txt'
+//          distribution 'repo'
+//        }
+//        license {
+//          name 'GNU LGPL Version 2.1 or greater'
+//          url 'https://www.gnu.org/licenses/old-licenses/lgpl-2.1.en.html'
+//          distribution 'repo'
+//        }
+//      }
+//    }
+//  }.writeTo("groovyJCSP-1.1.0.pom")
+//}
 
