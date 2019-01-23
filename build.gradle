@@ -10,7 +10,7 @@ plugins {
 }
 
 group 'groovyJCSP'
-version '1.1.2'       // 1.1.2 = compiled with groovy 2.5; 1.1.3 = compiled with groovy 3
+version '1.1.3a'       // 1.1.2 = compiled with groovy 2.5; 1.1.3 = compiled with groovy 3
 
 apply plugin: 'java'
 apply plugin: 'maven'
@@ -95,17 +95,17 @@ bintray {
     publicDownloadNumbers = true
     version {
       name = project.property('version')
-      desc = 'groovyJCSP compiled using groovy-all-2.5.2'
+      desc = 'groovyJCSP compiled using groovy-all-3.0.0'
     }
   }
 }
 
 dependencies {
-  compile 'org.codehaus.groovy:groovy-all:2.5.2'
-//  compile group: 'org.codehaus.groovy', name: 'groovy-all', version: '3.0.0-alpha-3'
+//  compile 'org.codehaus.groovy:groovy-all:2.5.2'
+  compile group: 'org.codehaus.groovy', name: 'groovy-all', version: '3.0.0-alpha-3'
   compile 'cspforjava:jcsp:1.1.0'
-  testCompile 'org.codehaus.groovy:groovy-all:2.5.2'
-//  testCompile group: 'org.codehaus.groovy', name: 'groovy-all', version: '3.0.0-alpha-3'
+//  testCompile 'org.codehaus.groovy:groovy-all:2.5.2'
+  testCompile group: 'org.codehaus.groovy', name: 'groovy-all', version: '3.0.0-alpha-3'
   testCompile 'cspforjava:jcsp:1.1.0'
   testCompile group: 'junit', name: 'junit', version: '4.12'
 }
