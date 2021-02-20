@@ -10,13 +10,15 @@ version '1.1.6'
 // prior versions on bintray
 // version 1.1.6 available from JitPack
 
-repositories {
-  mavenCentral()
-  maven {
-    url "https://mvnrepository.com/artifact/org.codehaus.groovy/groovy-all"
-  }
-  maven {
-    url  'https://jitpack.io'  
+allprojects {
+  repositories {
+    mavenCentral()
+    maven {
+      url "https://mvnrepository.com/artifact/org.codehaus.groovy/groovy-all"
+    }
+    maven {
+      url 'https://jitpack.io'
+    }
   }
 }
 
