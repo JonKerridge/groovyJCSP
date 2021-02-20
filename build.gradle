@@ -15,7 +15,9 @@ repositories {
   maven {
     url "https://mvnrepository.com/artifact/org.codehaus.groovy/groovy-all"
   }
-  maven { url  'https://jitpack.io' }
+  maven {
+    url  'https://jitpack.io'
+  }
 }
 
 // make sure the documentation is downloaded from JitPack
