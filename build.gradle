@@ -16,7 +16,7 @@ repositories {
     url "https://mvnrepository.com/artifact/org.codehaus.groovy/groovy-all"
   }
   maven {
-    url  'https://jitpack.io'
+    url  'https://jitpack.io'  
   }
 }
 
