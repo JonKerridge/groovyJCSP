@@ -6,9 +6,9 @@ plugins {
 }
 
 group 'groovyJCSP'
-version '1.1.6'
+version '1.1.7'
 // prior versions on bintray
-// version 1.1.6 available from JitPack
+// version 1.1.7 available from JitPack
 
 allprojects {
   repositories {
@@ -40,8 +40,8 @@ task javadocJar(type: Jar) {
 }
 
 dependencies {
-  compile 'com.github.CSPforJAVA:jcsp:1.1.2'
-  compile 'org.codehaus.groovy:groovy-all:3.0.7'
+  implementation 'com.github.CSPforJAVA:jcsp:1.1.2'
+  implementation 'org.codehaus.groovy:groovy-all:3.0.7'
   implementation group: 'junit', name: 'junit', version: '4.12'
 }
 
