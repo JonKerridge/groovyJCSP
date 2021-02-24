@@ -19,9 +19,11 @@ The groovyJCSP library is published using the Apache 2.0 Licence.
 
 The groovyJCSP library source is available at https://github.com/JonKerridge/groovyJCSP
 
-The library can be obtained from  
+The library can be obtained from  https://github.com/JonKerridge/groovyJCSP/releases/tag/1.1.8.
+
 The release contains the binaries which can be saved in a Local Maven repository 
 from where they can be accessed by a build file.
+
 Download the groovyJCSP-1.1.8-binaries.zip file and extract the contents to the directory
 
 %user_name%/.m2/repository/cspforjava/jcsp/1.1.8
