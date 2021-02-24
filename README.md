@@ -19,16 +19,34 @@ The groovyJCSP library is published using the Apache 2.0 Licence.
 
 The groovyJCSP library source is available at https://github.com/JonKerridge/groovyJCSP
 
-The library can be downloaded from JitPack using the following Gradle definitions:
+The library can be obtained from  
+The release contains the binaries which can be saved in a Local Maven repository 
+from where they can be accessed by a build file.
+Download the groovyJCSP-1.1.8-binaries.zip file and extract the contents to the directory
 
+%user_name%/.m2/repository/cspforjava/jcsp/1.1.8
+
+where %user_name% is the user's local directory for example in
+Windows 10 it is C:\Users\username
+in a unix system it is /user/username OR /home/username OR /users/username
+
+It is assumed that the cspforjava.jcsp.1.1.8 library has already been downloaded 
+to the Local Maven repository from https://github.com/CSPforJAVA/jcsp/releases/tag/1.1.8 ,
+
+In order to use jcsp, groovyJCSP and Groovy the following will be required in the build.gradle file.
 <pre>
 repositories {
     ...
-    maven { url 'https://jitpack.io' }
+    maven {
+      url "https://mvnrepository.com/artifact/org.codehaus.groovy/groovy-all"
+    }
+    mavenLocal()
 }
 
 dependencies {
-    implementation 'com.github.JonKerridge:groovyJCSP:1.1.6'
+    implementation 'org.codehaus.groovy:groovy-all:3.0.7'
+    implementation 'cspforjava:jcsp:1.1.8'
+    implementation 'groovyJCSP:groovyJCSP:1.1.8'
 }
 </pre>
 
