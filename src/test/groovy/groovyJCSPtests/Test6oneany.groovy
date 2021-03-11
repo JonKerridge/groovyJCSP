@@ -1,6 +1,6 @@
 package groovyJCSPtests
 
-import groovyJCSP.*
+import groovy_jcsp.*
 import jcsp.lang.*
 import org.junit.Test
 

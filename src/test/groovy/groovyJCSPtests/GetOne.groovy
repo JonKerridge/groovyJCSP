@@ -2,7 +2,7 @@ package groovyJCSPtests
 
 import jcsp.lang.*
 import groovy.transform.CompileStatic
-import groovyJCSP.*
+import groovy_jcsp.*
 
 @CompileStatic
 class GetOne implements CSProcess {
