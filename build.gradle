@@ -23,7 +23,6 @@ repositories {
       password = project.findProperty("gpr.key")
     }
   }
-
 }
 
 
