@@ -12,8 +12,8 @@ These classes are used extensively in the books<p>
 "Using Concurrency and Parallelism Effectively parts i & ii"
 by Jon Kerridge published by Bookboon, free of charge.<p>
 
-http://bookboon.com/en/using-concurrency-and-parallelism-effectively-i-ebook
-http://bookboon.com/en/using-concurrency-and-parallelism-effectively-ii-ebook
+http://bookboon.com/en/using-concurrency-and-parallelism-effectively-i-ebook  
+http://bookboon.com/en/using-concurrency-and-parallelism-effectively-ii-ebook  
 
 The groovy_jcsp library is published using the Apache 2.0 Licence.
 
