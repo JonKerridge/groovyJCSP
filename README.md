@@ -44,8 +44,8 @@ repositories {
 
 dependencies {
     implementation 'org.codehaus.groovy:groovy-all:3.0.7'
-    implementation 'cspforjava:jcsp:1.1.9'
-    implementation 'jonkerridge:groovy_jcsp:1.1.9'
+    implementation 'cspforjava:jcsp:1.1.?'  // replace ? with release number
+    implementation 'jonkerridge:groovy_jcsp:1.1.?'  // replace ? with same number as the one above
 }
 </pre>
 
