@@ -53,8 +53,11 @@ publishing {
       name = "Github"
       url = "https://maven.pkg.github.com/JonKerridge/groovyJCSP"
       credentials {
-        username = project.findProperty("gpr.user")
-        password = project.findProperty("gpr.key")
+//      if using a gradle.properties file within project structure
+//            username = project.findProperty("gpr.user")
+//            password = project.findProperty("gpr.key")
+        username = props.getProperty("gpr.user")
+        password = props.getProperty("gpr.key")
       }
     }
   }
