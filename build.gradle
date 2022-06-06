@@ -11,15 +11,23 @@ version '1.1.10'
 // version 1.1.9 github package
 // version 1.1.10 github package using Groovy 3.0.0+ and Java 11
 
+String propertyFileName = "C:/Github/gradle.properties"
+File propsFile = new File(propertyFileName)
+Properties props = new Properties()
+props.load(propsFile.newDataInputStream())
+
 repositories {
   mavenCentral()
-//  mavenLocal() // for testing
-  maven { // use this to download the CSPforJAVA.jcsp library
+//    mavenLocal()  // for testing packages prior to final publication
+  maven { // to download the cspforjava.jcsp library
     name = "GitHubPackages"
     url = "https://maven.pkg.github.com/CSPforJAVA/jcsp"
     credentials {
-      username = project.findProperty("gpr.user")
-      password = project.findProperty("gpr.key")
+//      if using a gradle.properties file within project structure
+//            username = project.findProperty("gpr.user")
+//            password = project.findProperty("gpr.key")
+      username = props.getProperty("gpr.user")
+      password = props.getProperty("gpr.key")
     }
   }
 }
